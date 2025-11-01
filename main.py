@@ -16,10 +16,10 @@ ROLE_ID = 1432733039808614462
 CHANNEL_ID = 1433993299043156081 
 
 STATUS_TRADUZIDO = {
-    "online": "🟢 Online",
-    "idle": "🌙 Ausente",
-    "dnd": "⛔ Ocupado",
-    "offline": "⚫ Offline"
+    "online": "online",
+    "idle": "ausente",
+    "dnd": "ocupado",
+    "offline": "offline"
 }
 
 @bot.event
@@ -49,7 +49,7 @@ async def on_presence_update(before, after):
             # Mensagem no canal
             channel = after.guild.get_channel(CHANNEL_ID)
             if channel:
-                await channel.send(f"@everyone ► {after.display_name} acabou de ficar **{status}**!")
+                await channel.send(f"@everyone ► {after.display_name} acabou de ficar **{status}** pra dar esse seu butico!")
 
             # Mensagem privada para o usuário
             try:
@@ -70,5 +70,6 @@ async def on_presence_update(before, after):
             channel = after.guild.get_channel(CHANNEL_ID)
             if channel:
                 await channel.send(f"@everyone ► {after.display_name} acabou de ficar **{status}**!")
+
 
 bot.run(token)
